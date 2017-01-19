@@ -11,8 +11,8 @@ import java.util.Date;
 @org.springframework.web.bind.annotation.RestController
 public class RestController {
 
-    @RequestMapping("/rlive")
+    @RequestMapping("/rest-alive")
     public String rlive() {
-        return "\n*****\nrlive: "+new Date()+"\n*****\n";
+        return "Rest Service is alive at "+new Date();
     }
 }

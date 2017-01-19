@@ -17,15 +17,15 @@ import static org.junit.Assert.assertThat;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class TestRestController {
+public class TestWebController {
 
     @Autowired
     private TestRestTemplate template;
 
     @Test
-    public void testRestControllerAlive() throws Exception {
-        String response = template.getForObject("/rest-alive", String.class);
+    public void testIsAlive() throws Exception {
+        String response = template.getForObject("/web-alive", String.class);
         assertThat(response.contains("404"), is(false));
-        assertThat(response, containsString("Rest Service is alive at"));
+        assertThat(response, containsString("Web Service is alive at"));
     }
 }
